@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       elsif params[:name].save
         session[:name] = params[:name]
         redirect_to '/'
-      else params[:name].empty?
+      elsif params[:name] == ""
             redirect_to '/login'
       end
     end
