@@ -20,4 +20,4 @@ def destroy
  else
    session.destroy :name
  end
-end 
+end
