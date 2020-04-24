@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
       elsif params[:username]
         session[:username] = params[:username]
         redirect_to '/'
-      end 
-    end 
+      end
+    end
   end
 
 def destroy
