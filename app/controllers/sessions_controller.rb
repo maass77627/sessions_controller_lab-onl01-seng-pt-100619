@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
   def create
     if params[:name].nil?
       redirect_to '/login'
-    if params[:name] == ""
+    elsif params[:name] == ""
           redirect_to '/login'
-      elsif params[:name].save
+      else
         session[:name] = params[:name]
         redirect_to '/'
       end
