@@ -6,12 +6,13 @@ class SessionsController < ApplicationController
   def create
     if params[:username].nil?
       redirect_to '/login'
-    elsif
-      session[:username] = params[:username]
+    if params[:username].empty?
+        redirect_to '/login'
+      elsif params[:username]
+        session[:username] = params[:username]
         redirect_to '/'
-      session[:name] = name_from_params
-      redirect_to root_path
-    end
+      end 
+    end 
   end
 
 def destroy
